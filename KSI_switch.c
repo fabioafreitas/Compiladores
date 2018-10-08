@@ -16,11 +16,6 @@ static char saida[N];
 //array a ser usada. O procedimento termina quando atinge a
 //primeira posi��o depois dos par�nteses.
 void casa_parenteses(char* array1, int* p) {
-	//c 0123456789 
-	//  ((a(aa))) 
-	//  c = 9
-	//  paren = 0 
-	
     int paren = 1; // inicialmente temos 1 parenteses, mas podemos achar mais
     int c = *p; // representa a posi��o do fecha parenteses, inicialmente 1
     while (paren != 0) { // quando for zero, tiramos os parenteses
@@ -86,7 +81,6 @@ void reduzK(char* array1, char* array2) {
     nA = n-1;
     acha_argumento(array1,&n);
 
-    //K a b => a
     int k = 0;
     int i;
 
@@ -122,7 +116,6 @@ void reduzS(char* array1, char* array2) {
     acha_argumento(array1,&n);
     nC = n-1;
 
-    //S a b c => a c ( b c )
     int k = 0;
     int i;
 
@@ -169,7 +162,6 @@ void reduzI(char* array1, char* array2) {
     acha_argumento(array1,&n);
     nA = n-1;
 
-    //K a b => a
     int k = 0;
     int i;
 
@@ -195,24 +187,23 @@ int main() {
     
     while (array1[1] != '\0') {
         switch (array1[0]) {
-            case 'K':
-                reduzK(array1,array2);
-                break;
-            case 'S':
-                reduzS(array1,array2);
-                break;
-            case 'I':
-                reduzI(array1,array2);
-                break;
             case '(':
                 recebeParenteses(array1);
                 array2[0] = 'X';
+                break;
+			case 'S':
+                reduzS(array1,array2);
+                break;
+			case 'K':
+                reduzK(array1,array2);
+                break;
+            case 'I':
+                reduzI(array1,array2);
                 break;
             default:
                 break;
         }
         
-        // troca o array 
         array3 = array1;
         array1 = array2;
         array2 = array3;
