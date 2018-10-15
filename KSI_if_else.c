@@ -155,26 +155,12 @@ void reduzS(char* array1, char* array2) {
 //dois arrays e executa a regra do combinador I: I a => a,
 //copiando os argumentos do array1 para o array2.
 void reduzI(char* array1, char* array2) {
-    int A, nA;
-    int n = 1;
-	
-    A = n;
-    acha_argumento(array1,&n);
-    nA = n-1;
-
     int k = 0;
     int i;
-
-    for (i = A; i <= nA; i++) {
+    for (i = 1; array1[i] != '\0'; i++) {
         array2[k] = array1[i];
         k++;
     }
-
-    for (n = n; array1[n] != '\0'; n++) {
-        array2[k] = array1[n];
-        k++;
-    }
-
     array2[k] = '\0';
 }
 
