@@ -165,11 +165,92 @@ void reduzI(char* array1, char* array2) {
 }
 
 void reduzB(char* array1, char* array2) {
+    int A, nA;
+    int B, nB;
+    int C, nC;
+    int n = 1;
+	
+    A = n;
+    acha_argumento(array1,&n);
+    nA = n-1;
+    B = n;
+    acha_argumento(array1,&n);
+    nB = n-1;
+    C = n;
+    acha_argumento(array1,&n);
+    nC = n-1;
+
+    int k = 0;
+    int i;
+
+    for (i = A; i <= nA; i++) {
+        array2[k] = array1[i];
+        k++;
+    }
     
+    array2[k] = '(';
+    k++;
+
+    for (i = B; i <= nB; i++) {
+        array2[k] = array1[i];
+        k++;
+    }
+    for (i = C; i <= nC; i++) {
+        array2[k] = array1[i];
+        k++;
+    }
+
+    array2[k] = ')';
+    k++;
+
+    for (n = n; array1[n] != '\0'; n++) {
+        array2[k] = array1[n];
+        k++;
+    }
+
+    array2[k] = '\0';
 }
 
 void reduzC(char* array1, char* array2) {
-    
+    int A, nA;
+    int B, nB;
+    int C, nC;
+    int n = 1;
+	
+    A = n;
+    acha_argumento(array1,&n);
+    nA = n-1;
+    B = n;
+    acha_argumento(array1,&n);
+    nB = n-1;
+    C = n;
+    acha_argumento(array1,&n);
+    nC = n-1;
+
+    int k = 0;
+    int i;
+
+    for (i = A; i <= nA; i++) {
+        array2[k] = array1[i];
+        k++;
+    }
+
+    for (i = C; i <= nC; i++) {
+        array2[k] = array1[i];
+        k++;
+    }
+
+	for (i = B; i <= nB; i++) {
+        array2[k] = array1[i];
+        k++;
+    }
+
+    for (n = n; array1[n] != '\0'; n++) {
+        array2[k] = array1[n];
+        k++;
+    }
+
+    array2[k] = '\0';   
 }
 
 int main() {
@@ -193,6 +274,12 @@ int main() {
                 break;
             case 'I':
                 reduzI(array1,array2);
+                break;
+            case 'B':
+                reduzB(array1,array2);
+                break;
+            case 'C':
+                reduzC(array1,array2);
                 break;
             default:
                 break;

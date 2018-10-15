@@ -276,6 +276,12 @@ int main() {
             case 'I':
                 reduzI(array1,array2);
                 break;
+            case 'B':
+                reduzB(array1,array2);
+                break;
+            case 'C':
+                reduzC(array1,array2);
+                break;
             default:
                 break;
         }
