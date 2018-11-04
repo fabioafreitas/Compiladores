@@ -253,6 +253,198 @@ void reduzC(char* array1, char* array2) {
     array2[k] = '\0';   
 }
 
+// S1
+void reduzD(char* array1, char* array2) {
+    int A, nA; // c
+    int B, nB; // f
+    int C, nC; // g
+    int D, nD; // x
+    int n = 1;
+
+    A = n;
+    acha_argumento(array1,&n);
+    nA = n-1;
+    B = n;
+    acha_argumento(array1,&n);
+    nB = n-1;
+    C = n;
+    acha_argumento(array1,&n);
+    nC = n-1;
+    D = n;
+    acha_argumento(array1,&n);
+    nD = n-1;
+
+    int k = 0;
+    int i;
+
+    // repete o C
+    for (i = A; i <= nA; i++) {
+        array2[k] = array1[i];
+        k++;
+    }
+
+    array2[k] = '(';
+    k++;
+
+    // repete o F
+    for (i = B; i <= nB; i++) {
+        array2[k] = array1[i];
+        k++;
+    }
+
+    // repete o X
+    for (i = D; i <= nD; i++) {
+        array2[k] = array1[i];
+        k++;
+    }
+
+    array2[k] = ')';
+    k++;
+
+    array2[k] = '(';
+    k++;
+
+    for (i = C; i <= nC; i++) {
+        array2[k] = array1[i];
+        k++;
+    }
+
+    for (i = D; i <= nD; i++) {
+        array2[k] = array1[i];
+        k++;
+    }
+
+    array2[k] = ')';
+    k++;
+
+    for (n = n; array1[n] != '\0'; n++) {
+        array2[k] = array1[n];
+        k++;
+    }
+
+    array2[k] = '\0';
+}
+
+// B1
+void reduzE(char* array1, char* array2) {
+    int A, nA; // c
+    int B, nB; // f
+    int C, nC; // g
+    int D, nD; // x
+    int n = 1;
+
+    A = n;
+    acha_argumento(array1,&n);
+    nA = n-1;
+    B = n;
+    acha_argumento(array1,&n);
+    nB = n-1;
+    C = n;
+    acha_argumento(array1,&n);
+    nC = n-1;
+    D = n;
+    acha_argumento(array1,&n);
+    nD = n-1;
+
+    int k = 0;
+    int i;
+
+    // repete o C
+    for (i = A; i <= nA; i++) {
+        array2[k] = array1[i];
+        k++;
+    }
+
+    // repete o F
+    for (i = B; i <= nB; i++) {
+        array2[k] = array1[i];
+        k++;
+    }
+
+    array2[k] = '(';
+    k++;
+
+    for (i = C; i <= nC; i++) {
+        array2[k] = array1[i];
+        k++;
+    }
+
+    for (i = D; i <= nD; i++) {
+        array2[k] = array1[i];
+        k++;
+    }
+
+    array2[k] = ')';
+    k++;
+
+    for (n = n; array1[n] != '\0'; n++) {
+        array2[k] = array1[n];
+        k++;
+    }
+
+    array2[k] = '\0';
+}
+
+// C1
+void reduzF(char* array1, char* array2) {
+    int A, nA; // c
+    int B, nB; // f
+    int C, nC; // g
+    int D, nD; // x
+    int n = 1;
+
+    A = n;
+    acha_argumento(array1,&n);
+    nA = n-1;
+    B = n;
+    acha_argumento(array1,&n);
+    nB = n-1;
+    C = n;
+    acha_argumento(array1,&n);
+    nC = n-1;
+    D = n;
+    acha_argumento(array1,&n);
+    nD = n-1;
+
+    int k = 0;
+    int i;
+
+    // repete o C
+    for (i = A; i <= nA; i++) {
+        array2[k] = array1[i];
+        k++;
+    }
+
+    array2[k] = '(';
+    k++;
+
+    // repete o F
+    for (i = B; i <= nB; i++) {
+        array2[k] = array1[i];
+        k++;
+    }
+
+    for (i = D; i <= nD; i++) {
+        array2[k] = array1[i];
+        k++;
+    }
+
+    array2[k] = ')';
+    k++;
+
+    for (i = C; i <= nC; i++) {
+        array2[k] = array1[i];
+        k++;
+    }
+
+    for (n = n; array1[n] != '\0'; n++) {
+        array2[k] = array1[n];
+        k++;
+    }
+
+    array2[k] = '\0';
+}
+
 int main() {
 
     char* array1 = entrada; // array que as checagens ocorrem
@@ -266,20 +458,29 @@ int main() {
                 recebeParenteses(array1);
                 array2[0] = 'X';
                 break;
-			case 'S':
-                reduzS(array1,array2);
+			case 'I':
+                reduzI(array1,array2);
                 break;
-			case 'K':
+            case 'K':
                 reduzK(array1,array2);
                 break;
-            case 'I':
-                reduzI(array1,array2);
+            case 'F':
+                reduzF(array1,array2);
+                break;
+            case 'D':
+                reduzD(array1,array2);
                 break;
             case 'B':
                 reduzB(array1,array2);
                 break;
+			case 'S':
+                reduzS(array1,array2);
+                break;
             case 'C':
                 reduzC(array1,array2);
+                break;
+            case 'E':
+                reduzE(array1,array2);
                 break;
             default:
                 break;

@@ -458,29 +458,29 @@ int main() {
                 recebeParenteses(array1);
                 array2[0] = 'X';
                 break;
-			case 'S':
-                reduzS(array1,array2);
-                break;
-			case 'K':
-                reduzK(array1,array2);
-                break;
-            case 'I':
+			case 'I':
                 reduzI(array1,array2);
                 break;
-            case 'B':
-                reduzB(array1,array2);
+            case 'K':
+                reduzK(array1,array2);
                 break;
-            case 'C':
-                reduzC(array1,array2);
+            case 'F':
+                reduzF(array1,array2);
                 break;
             case 'D':
                 reduzD(array1,array2);
                 break;
+            case 'B':
+                reduzB(array1,array2);
+                break;
+			case 'S':
+                reduzS(array1,array2);
+                break;
+            case 'C':
+                reduzC(array1,array2);
+                break;
             case 'E':
                 reduzE(array1,array2);
-                break;
-            case 'F':
-                reduzF(array1,array2);
                 break;
             default:
                 break;
